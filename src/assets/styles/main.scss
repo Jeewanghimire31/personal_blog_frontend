@@ -1,4 +1,8 @@
-@import "./base/reset";
-@import "./abstracts/variables";
-@import "./base/typograpgy";
+// Import Bootstrap
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+@import "./abstracts/all";
+@import "./base/all";
+@import "./pages/all";
+
 

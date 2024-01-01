@@ -1,0 +1,54 @@
+.login-page{
+  width: 100%;
+  height: 100vh;
+
+  .page-title{
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  .login-page-container{
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    width: 50%;
+    padding: 3rem 4rem;
+
+    input{
+        &:focus{
+            border: none;
+            outline: none;
+        }
+    }
+
+    button{
+      background-color: $primary-color;
+      color: $text-color;
+
+      &:hover{
+        background-color: rgb(20, 40, 61);
+      }
+    }
+    .register{
+      a{
+        color: rgb(196, 151, 19) !important ;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .login-page {
+    .login-page-container{
+      width: 70%;
+    }
+}
+}
+@media only screen and (max-width: 425px){
+  .login-page {
+    .login-page-container{
+      width: 100%;
+      box-shadow:none;
+      padding: 2rem;
+    }
+}
+}

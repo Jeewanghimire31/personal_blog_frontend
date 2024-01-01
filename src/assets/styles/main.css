@@ -1,3 +1,5 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+/* System Fonts as used by GitHub */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -53,7 +55,61 @@ table {
   border-spacing: 0;
 }
 
-/* System Fonts as used by GitHub */
+a {
+  text-decoration: none;
+  color: rgb(221, 221, 221);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Work Sans", sans-serif;
+  background: linear-gradient(-200deg, rgb(2, 0, 36) 0%, rgb(31, 53, 77) 65%);
+  color: rgb(221, 221, 221);
+}
+
+.login-page {
+  width: 100%;
+  height: 100vh;
+}
+.login-page .page-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.login-page .login-page-container {
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  width: 50%;
+  padding: 3rem 4rem;
+}
+.login-page .login-page-container input:focus {
+  border: none;
+  outline: none;
+}
+.login-page .login-page-container button {
+  background-color: rgba(2, 0, 36, 0.5);
+  color: rgb(221, 221, 221);
+}
+.login-page .login-page-container button:hover {
+  background-color: rgb(20, 40, 61);
+}
+.login-page .login-page-container .register a {
+  color: rgb(196, 151, 19) !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .login-page .login-page-container {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .login-page .login-page-container {
+    width: 100%;
+    box-shadow: none;
+    padding: 2rem;
+  }
 }/*# sourceMappingURL=main.css.map */
