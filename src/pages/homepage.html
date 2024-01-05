@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../assets/styles/main.css">
+  <title>Blog Site</title>
+</head>
+<body>
+  <div id="app">
+
+  <main>
+    <section class="main-slider">
+      <div class="hero-img">
+        <!-- * navbar import -->
+        <div id="importedNav"></div>
+        <script>
+          async function fetchAndInsertContent() {
+            try {
+              const response = await fetch('/src/pages/navbar.html');
+              const html = await response.text();
+              document.getElementById('importedNav').innerHTML = html;
+              const header = document.getElementById('header');
+              header.style.justifyContent="space-around";
+            } catch (error) {
+              console.error('Error fetching or inserting content:', error);
+            }
+          }
+          fetchAndInsertContent();
+        </script>
+        <div class="hero-bg"></div>
+        <div class="container">
+          <div class="hero-text">
+            <div class="welcome-text"><span class ="big-text">WELCOME</span><span class="small-text">TO OUR BLOG</span></div>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="./login.html" target="_self"><button class="btn btn-primary mt-4 text-center">Get Started</button></a>
+        </div>
+        </div>
+      </div>
+    </section>
+  </main>
+ 
+  </div>
+  <script type="module" src="./src/scripts/main.ts"></script>
+</body>
+
+</html>
