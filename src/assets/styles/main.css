@@ -72,6 +72,52 @@ body {
   color: rgb(221, 221, 221);
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-block: 1rem;
+}
+header .logo {
+  width: 50px;
+  height: 50px;
+}
+header .logo img {
+  max-width: 100%;
+}
+header .main_nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.56rem;
+}
+header .main_nav ul li a {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+header .ham_burger {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  header .main_nav {
+    display: none;
+  }
+  header .header-actions {
+    display: none;
+  }
+  header .ham_burger {
+    cursor: pointer;
+    display: block;
+  }
+  header .ham_burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+  }
+}
 .login-page {
   width: 100%;
   height: 100vh;
@@ -111,5 +157,65 @@ body {
     width: 100%;
     box-shadow: none;
     padding: 2rem;
+  }
+}
+.main-slider {
+  margin-top: 0;
+  height: 100vh;
+}
+.main-slider .hero-img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-image: url("/src/assets/img/background1.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 0;
+}
+.main-slider .hero-img .hero-bg {
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.main-slider .hero-img .hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+}
+.main-slider .hero-img .hero-text p {
+  font-size: 16px;
+  padding-top: 30px;
+}
+.main-slider .hero-img .hero-text .welcome-text {
+  padding-bottom: 25px;
+  border-bottom: 4px solid rgba(2, 0, 36, 0.5);
+}
+.main-slider .hero-img .hero-text .welcome-text span {
+  display: block;
+}
+.main-slider .hero-img .hero-text .welcome-text .big-text {
+  font-size: 50px;
+  font-weight: bold;
+}
+.main-slider .hero-img .hero-text .welcome-text .small-text {
+  font-size: 38px;
+  font-weight: bold;
+  margin-top: 0px;
+}
+.main-slider button {
+  background-color: rgba(2, 0, 36, 0.5);
+  color: rgb(221, 221, 221);
+  border: none;
+}
+
+@media screen and (max-width: 768px) {
+  #header {
+    justify-content: space-between !important;
   }
 }/*# sourceMappingURL=main.css.map */
