@@ -27,11 +27,14 @@
         ],
         "quotes": [
             "error",
-            "single"
+            "double"
         ],
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "import/no-unresolved": "off", 
+        "import/extensions": "off" 
+          
     }
 }

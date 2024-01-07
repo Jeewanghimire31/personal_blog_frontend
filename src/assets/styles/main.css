@@ -218,4 +218,85 @@ header .ham_burger {
   #header {
     justify-content: space-between !important;
   }
+}
+#blog-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.blog-card {
+  border-right: 0.1px solid rgb(222, 226, 230);
+  border-bottom: 1px solid rgb(222, 226, 230);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin: 15px;
+  padding: 15px;
+  display: flex;
+  flex: 0 0 calc(50% - 30px); /* Two cards in a row with margins */
+  transition: transform 0.3s ease-in-out;
+}
+.blog-card:hover {
+  transform: scale(1.01);
+}
+.blog-card .blog-card-image {
+  max-width: 100%;
+  max-height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.blog-card .blog-card-content {
+  flex-grow: 1;
+}
+.blog-card .blog-card-content .blog-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  margin-left: 14px;
+  font-weight: 700;
+}
+.blog-card .blog-card-content .blog-description {
+  font-size: 0.9rem;
+  color: #dee2e6;
+  margin-bottom: 15px;
+  padding-inline: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.blog-card .blog-card-content .read-more-button {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.blog-card .blog-card-content .read-more-line::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 29px; /* Adjust the length of the line as needed */
+  background-color: #007bff;
+  margin-left: 10px; /* Adjust the margin to control the distance between text and line */
+}
+.blog-card .blog-card-content .read-more-circle::after {
+  content: ">";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #007bff;
+  border-radius: 50%;
+  background-color: transparent; /* Set the inside of the circle to be transparent */
+  font-size: 13px;
+  top: 7px;
+  right: -38px;
+}
+@media (max-width: 768px) {
+  .blog-card {
+    flex: 0 0 calc(100% - 60px); /* Two cards in a row with margins for larger screens */
+  }
 }/*# sourceMappingURL=main.css.map */
