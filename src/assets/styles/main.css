@@ -223,8 +223,7 @@ header .ham_burger {
   display: flex;
   flex-wrap: wrap;
 }
-
-.blog-card {
+#blog-container .blog-card {
   border-right: 0.1px solid rgb(222, 226, 230);
   border-bottom: 1px solid rgb(222, 226, 230);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
@@ -235,10 +234,10 @@ header .ham_burger {
   flex: 0 0 calc(50% - 30px); /* Two cards in a row with margins */
   transition: transform 0.3s ease-in-out;
 }
-.blog-card:hover {
+#blog-container .blog-card:hover {
   transform: scale(1.01);
 }
-.blog-card .blog-card-image {
+#blog-container .blog-card .blog-card-image {
   max-width: 100%;
   max-height: 120px;
   -o-object-fit: cover;
@@ -247,56 +246,104 @@ header .ham_burger {
   margin-bottom: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.blog-card .blog-card-content {
+#blog-container .blog-card .blog-card-content {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
 }
-.blog-card .blog-card-content .blog-title {
+#blog-container .blog-card .blog-card-content .blog-title {
   font-size: 1.2rem;
   margin-bottom: 10px;
-  margin-left: 14px;
   font-weight: 700;
 }
-.blog-card .blog-card-content .blog-description {
+#blog-container .blog-card .blog-card-content .blog-description {
   font-size: 0.9rem;
   color: #dee2e6;
-  margin-bottom: 15px;
-  padding-inline: 0.8rem;
+  margin-bottom: 22px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
-.blog-card .blog-card-content .read-more-button {
-  text-decoration: none;
-  color: #007bff;
-  font-weight: bold;
+#blog-container .blog-card .blog-card-content .read-more-button {
   position: relative;
   display: inline-flex;
   align-items: center;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+  text-transform: capitalize;
 }
-.blog-card .blog-card-content .read-more-line::before {
+#blog-container .blog-card .blog-card-content .read-more-line::before {
   content: "";
   position: absolute;
   height: 2px;
-  width: 29px; /* Adjust the length of the line as needed */
+  top: 9px;
+  width: 30px; /* Adjust the length of the line as needed */
   background-color: #007bff;
   margin-left: 10px; /* Adjust the margin to control the distance between text and line */
 }
-.blog-card .blog-card-content .read-more-circle::after {
+#blog-container .blog-card .blog-card-content .read-more-circle::after {
   content: ">";
   position: absolute;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   border: 2px solid #007bff;
   border-radius: 50%;
-  background-color: transparent; /* Set the inside of the circle to be transparent */
+  background-color: transparent;
   font-size: 13px;
-  top: 7px;
-  right: -38px;
+  top: 1px;
+  left: 111px;
 }
 @media (max-width: 768px) {
-  .blog-card {
+  #blog-container .blog-card {
     flex: 0 0 calc(100% - 60px); /* Two cards in a row with margins for larger screens */
+  }
+}
+
+@media screen and (max-width: 575px) {
+  #blog-container {
+    justify-content: center;
+    align-items: center;
+  }
+  #blog-container .blog-card {
+    flex-direction: column;
+    margin: 10px;
+    padding: 11px;
+  }
+  #blog-container .blog-card .blog-card-image {
+    max-width: 100%;
+    max-height: 100px;
+    margin-bottom: 15px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #blog-container .blog-card .blog-card-content {
+    margin-left: 0rem;
+  }
+  #blog-container .blog-card .blog-card-content .blog-title {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  #blog-container .blog-card .blog-card-content .blog-description {
+    margin-bottom: 15px;
+    font-size: 0.75rem;
+  }
+  #blog-container .blog-card .blog-card-content .read-more-button {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+  #blog-container .blog-card .blog-card-content .read-more-line::before {
+    height: 1.5px;
+    top: 6px;
+  }
+  #blog-container .blog-card .blog-card-content .read-more-circle::after {
+    top: -1px;
+    left: 96px;
+    font-size: 11px;
+    width: 18px;
+    height: 18px;
   }
 }/*# sourceMappingURL=main.css.map */

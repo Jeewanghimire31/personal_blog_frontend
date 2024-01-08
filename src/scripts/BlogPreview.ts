@@ -19,7 +19,7 @@ function createBlogCard({
       <div class="blog-card-content">
         <h2 class="blog-title">${title}</h2>
         <p class="blog-description">${description}</p>
-        <a href="${readMoreLink}" class="read-more-button btn text-center">
+        <a href="${readMoreLink}" class="read-more-button text-center">
         Read More
         <span class="read-more-line"></span>
         <span class="read-more-circle"></span>
