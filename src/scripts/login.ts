@@ -7,6 +7,10 @@ import {
 } from "./utils/displayValidationError";
 import loginValidationSchema from "./validation/login.validationSchema";
 
+// if(!isUserAuthenticated()){
+//   navigateTo("../pages/adminDashboard.html");
+//   console.log("hekllo ")
+// }
 const login = async (formData: FormData) => {
   console.log(formData);
   try {
@@ -25,6 +29,7 @@ const login = async (formData: FormData) => {
       // Store tokens in localStorage
       localStorage.setItem("accessToken", response.data.accessToken);
       localStorage.setItem("refreshToken", response.data.refreshToken);
+      localStorage.setItem("role", response.data.role);
 
       Toast(response.data.message);
       const formElement = document.getElementById(
