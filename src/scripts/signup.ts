@@ -1,5 +1,7 @@
 import { FormData } from "./interfaces/FormData";
+import { navigateTo } from "./main";
 import Toast from "./utils/Toastify";
+import { isUserAuthenticated } from "./utils/auth";
 import Axios from "./utils/axios";
 import { clearErrorMessages, displayErrorMessage } from "./utils/displayValidationError";
 import signupValidationSchema from "./validation/signup.validationSchema";
@@ -26,7 +28,7 @@ const signup = async (formData: FormData) => {
 
       // send to login page after signup
       setTimeout(() => {
-        window.location.href = "../pages/login.html";
+        navigateTo('../pages/login.html');
       }, 3000);
     }
   } catch (error: any) {
