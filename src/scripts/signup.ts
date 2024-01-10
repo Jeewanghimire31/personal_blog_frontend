@@ -1,25 +1,8 @@
 import { FormData } from "./interfaces/FormData";
 import Toast from "./utils/Toastify";
 import Axios from "./utils/axios";
+import { clearErrorMessages, displayErrorMessage } from "./utils/displayValidationError";
 import signupValidationSchema from "./validation/signup.validationSchema";
-
-const displayErrorMessage = (field: string, message: string) => {
-  const errorElement = document.getElementById(`${field}-error`);
-  if (errorElement) {
-    errorElement.textContent = message;
-    errorElement.style.color = "red";
-  }
-};
-
-const clearErrorMessages = () => {
-  const errorContainers = document.querySelectorAll(".form-outline");
-  errorContainers.forEach((container) => {
-    const errorMessage = container.querySelector(".error-message");
-    if (errorMessage) {
-      errorMessage.textContent = "";
-    }
-  });
-};
 
 // api call
 const signup = async (formData: FormData) => {
