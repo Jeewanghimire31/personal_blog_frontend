@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../assets/styles/main.css">
+</head>
+
+<body>
+    <section id="blog">
+        <div class="search-bar">
+            <div class="col-md-8 col-12 d-flex gap-3">
+                <input type="text" placeholder="Search Blogs" id="blog-search-input" class="col-md-8">
+                <button type="button" class="btn btn-outline-primary col-md-2" data-mdb-ripple-init>search</button>
+            </div>
+          
+            <button class="btn btn-primary col-md-2 col-12" id="add-blog-dialog">Add</button>
+        </div>
+
+        <div class="blog-list" id="fetch-blogs">
+            <div class="blog-title">Blog 1</div>
+            <div class="blog-title">Blog 2</div>
+        </div>
+        <div class="add-dialog" id="add-dialog-form">
+            <form class="add-dialog-form-form d-flex ">
+                <label for="image">Image:</label>
+                <input type="file" id="image" name="image">
+
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title">
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description"></textarea>
+
+                <label for="subtitle">Subtitle:</label>
+                <input type="text" id="subtitle" name="subtitle">
+
+                <div class="flex">
+                    <button type="button" class="btn btn-secondary">Add Description</button>
+                    <button type="button" class="btn btn-secondary">Add Image</button>
+                    <button type="button" class="btn btn-secondary">Add Title</button>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Add Blog</button>
+            </form>
+        </div>
+    </section>
+
+    <script type="module" src="/src/scripts/admin/blog.ts"></script>
+    <script type="module" src="/src/scripts/admin/overview.ts"></script>
+</body>
+
+</html>
