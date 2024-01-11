@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/assets/styles/main.css">
     <title>Admin Dashboard</title>
 </head>
-<body>
-    hello i am in admin dashboard!!!
 
-    <script type="module" src="../scripts/main.ts"></script>
+<body>
+    <div class="navbar">
+        <div class="logo">Logo</div>
+        <div class="nav-items">
+            <div class="nav-item overview">Overview</div>
+            <div class="nav-item blogs">Blogs</div>
+            <div class="nav-item logout">Logout</div>
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- content pass dynamically from js -->
+    </div>
+
+    <script type="module" src="../scripts/adminDashboard.ts"></script>
+    <script type="module" src="../scripts/admin/overview.ts"></script>
+    <!-- <script type="module" src="../scripts/admin/blog.ts"></script> -->
 </body>
+
 </html>
