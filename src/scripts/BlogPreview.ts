@@ -1,24 +1,51 @@
+import { BlogForm } from "./interfaces/FormData";
+import Axios from "./utils/axios";
+
 interface BlogCardProps {
   title?: string;
   imageSrc?: string;
-  description?: string;
+  content?: string;
   readMoreLink?: string;
 }
+let blogs: BlogForm[] = [];
 
-const blogContainer = document.getElementById("blog-container");
+const renderBlogs = () => {
+  if (blogContainer) {
+    // * Render each blog card
+    blogs.forEach((blog) => {
+      const blogCardHTML = createBlogCard(blog);
+      blogContainer.innerHTML += blogCardHTML;
+    });
+  }
+};
+
+const blogContainer = document.querySelector(".blog-container");
+
+const getBlogs = async () => {
+  const response = await Axios.get("/blogs");
+  console.log(response.data.data);
+  blogs = response.data.data;
+};
+
+const main = async () => {
+  await getBlogs();
+  renderBlogs();
+};
+
+await main();
 
 function createBlogCard({
   title,
   imageSrc,
-  description,
+  content,
   readMoreLink,
 }: BlogCardProps): string {
   return `
     <div class="blog-card">
-      <img src="${imageSrc}" alt="${title}" class="blog-card-image">
+      <img src="https://media.cnn.com/api/v1/images/stellar/prod/221218184732-messi-wc-trophy.jpg?c=original" alt="${title}" class="blog-card-image">
       <div class="blog-card-content">
         <h2 class="blog-title">${title}</h2>
-        <p class="blog-description">${description}</p>
+        <p class="blog-description">${content}</p>
         <a href="${readMoreLink}" class="read-more-button text-center">
         Read More
         <span class="read-more-line"></span>
@@ -27,49 +54,4 @@ function createBlogCard({
       </div>
     </div>
   `;
-}
-
-if (blogContainer) {
-  const blogData = [
-    {
-      title: "Blog Post 1",
-      imageSrc: "/src/assets/img/background1.webp",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis eum debitis eligendi fugiat maxime nulla aliquam nihil obcaecati nobis, veniam vero cum omnis explicabo dicta quas, blanditiis dolorum placeat expedita? Odit, nam quo! Corrupti aspernatur est magnam, quas aut, illum nesciunt nisi soluta molestias obcaecati officia ullam libero accusamus odio?",
-      readMoreLink: "blogpost1.html",
-    },
-    {
-      title: "Blog Post 1",
-      imageSrc: "/src/assets/img/background1.webp",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis eum debitis eligendi fugiat maxime nulla aliquam nihil obcaecati nobis, veniam vero cum omnis explicabo dicta quas, blanditiis dolorum placeat expedita? Odit, nam quo! Corrupti aspernatur est magnam, quas aut, illum nesciunt nisi soluta molestias obcaecati officia ullam libero accusamus odio?",
-      readMoreLink: "blogpost1.html",
-    },
-    {
-      title: "Blog Post 1",
-      imageSrc: "/src/assets/img/background1.webp",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis eum debitis eligendi fugiat maxime nulla aliquam nihil obcaecati nobis, veniam vero cum omnis explicabo dicta quas, blanditiis dolorum placeat expedita? Odit, nam quo! Corrupti aspernatur est magnam, quas aut, illum nesciunt nisi soluta molestias obcaecati officia ullam libero accusamus odio?",
-      readMoreLink: "blogpost1.html",
-    },
-    {
-      title: "Blog Post 1",
-      imageSrc: "/src/assets/img/background1.webp",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis eum debitis eligendi fugiat maxime nulla aliquam nihil obcaecati nobis, veniam vero cum omnis explicabo dicta quas, blanditiis dolorum placeat expedita? Odit, nam quo! Corrupti aspernatur est magnam, quas aut, illum nesciunt nisi soluta molestias obcaecati officia ullam libero accusamus odio?",
-      readMoreLink: "blogpost1.html",
-    },
-    {
-      title: "Blog Post 1",
-      imageSrc: "/src/assets/img/background1.webp",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis eum debitis eligendi fugiat maxime nulla aliquam nihil obcaecati nobis, veniam vero cum omnis explicabo dicta quas, blanditiis dolorum placeat expedita? Odit, nam quo! Corrupti aspernatur est magnam, quas aut, illum nesciunt nisi soluta molestias obcaecati officia ullam libero accusamus odio?",
-      readMoreLink: "blogpost1.html",
-    },
-  ];
-  // * Render each blog card
-  blogData.forEach((blog) => {
-    const blogCardHTML = createBlogCard(blog);
-    blogContainer.innerHTML += blogCardHTML;
-  });
 }
