@@ -15,16 +15,19 @@
                 <input type="text" placeholder="Search Blogs" id="blog-search-input" class="col-md-8">
                 <button type="button" class="btn btn-outline-primary col-md-2" data-mdb-ripple-init>search</button>
             </div>
-          
+
             <button class="btn btn-primary col-md-2 col-12" id="add-blog-dialog">Add</button>
         </div>
 
-        <div class="blog-list" id="fetch-blogs">
-            <div class="blog-title">Blog 1</div>
-            <div class="blog-title">Blog 2</div>
-        </div>
+        <!-- * fetch blogs from back -->
+        <!-- <div class="blog-list" id="blog-lists">
+        </div> -->
+
+        <div class="blog-container" id="blog-container"></div>
+
         <div class="add-dialog" id="add-dialog-form">
-            <form class="add-dialog-form-form d-flex ">
+            <div class="close-button" id="close-dialog">&times;</div>
+            <form class="add-dialog-form-form d-flex " id="blog-form">
                 <label for="image">Image:</label>
                 <input type="file" id="image" name="image">
 
@@ -42,14 +45,18 @@
                     <button type="button" class="btn btn-secondary">Add Image</button>
                     <button type="button" class="btn btn-secondary">Add Title</button>
                 </div>
-
-                <button type="submit" class="btn btn-primary">Add Blog</button>
+                <div class="d-flex gap-2">
+                    <button type="button" class="btn btn-secondary col-md-6" id="cancel-blog">Cancel</button>
+                    <button type="submit" class="btn btn-primary col-md-6" id="add-blog-button">Add Blog</button>
+                </div>
             </form>
         </div>
     </section>
 
     <script type="module" src="/src/scripts/admin/blog.ts"></script>
     <script type="module" src="/src/scripts/admin/overview.ts"></script>
+    <script type="module" src="/src/scripts/BlogPreview.ts"></script>
+
 </body>
 
 </html>
