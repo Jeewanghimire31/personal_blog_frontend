@@ -88,11 +88,24 @@
       }
     }
 
+
+    .edit-blog{
+      .blog-edit-button{
+        cursor: pointer;
+      }
+      .blog-delete-button{
+        cursor: pointer;
+        color: red;
+      }
+    }
+    
+
     @media (max-width: 768px) {
       flex: 0 0 calc(100% - 60px); /* Two cards in a row with margins for larger screens */
     }
   }
 }
+
 
 @media screen and (max-width: 575px) {
   #blog-container {

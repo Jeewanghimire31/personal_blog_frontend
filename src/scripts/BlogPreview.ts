@@ -2,6 +2,7 @@ import { BlogForm } from "./interfaces/FormData";
 import Axios from "./utils/axios";
 
 interface BlogCardProps {
+  blog_id?: string;
   title?: string;
   imageSrc?: string;
   content?: string;
@@ -35,6 +36,7 @@ const fetchBlogs = async () => {
 await fetchBlogs();
 
 function createBlogCard({
+  blog_id,
   title,
   imageSrc,
   content,
@@ -52,6 +54,29 @@ function createBlogCard({
         <span class="read-more-circle"></span>
         </a>
       </div>
+    <div class="edit-blog d-flex align-items-end mb-2 gap-3 ">
+    <div class="blog-edit-button" id="blog-edit-button-${blog_id}">edit</div>
+    <div class="blog-delete-button" id="${blog_id}">Delete</div>
+    </div>
     </div>
   `;
 }
+
+const editBlog = Array.from(document.querySelectorAll(".blog-edit-button"));
+
+editBlog.forEach((blog)=>{
+  blog.addEventListener("click", ()=>{
+    const blogId = blog.getAttribute("id") as string;
+    console.log("clicked edit", blogId);
+  })
+})
+
+
+const deleteBlog = Array.from(document.querySelectorAll(".blog-delete-button"));
+
+deleteBlog.forEach((blog) => {
+  blog.addEventListener("click", () => {
+    const blogId = blog.getAttribute("id") as string;
+    console.log("clicked delete", blogId);
+  });
+});
