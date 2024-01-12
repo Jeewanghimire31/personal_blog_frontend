@@ -27,12 +27,12 @@ const getBlogs = async () => {
   blogs = response.data.data;
 };
 
-const main = async () => {
+const fetchBlogs = async () => {
   await getBlogs();
   renderBlogs();
 };
 
-await main();
+await fetchBlogs();
 
 function createBlogCard({
   title,
