@@ -13,7 +13,7 @@ const cancelBlogButton = document.getElementById("cancel-blog")!;
 addBlogDialogButton?.addEventListener("click", () => {
   if (!addDialogForm) return;
   addDialogForm.style.display = "block";
-  // addDialogForm.style.display === "block" ? "none" : "block";
+  addDialogForm.style.display === "block" ? "none" : "block";
   console.log("hello");
 });
 
