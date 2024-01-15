@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/assets/styles/main.css">
+    <title>single-blog</title>
+</head>
+<body>
+    <div class="single-page-container" id="single-page-container">
+
+    </div>
+    
+    <section class="comment-section">
+          <!-- ======= Comments Form ======= -->
+          <div class="row mt-5">
+
+            <div class="col-lg-6">
+              <h5 class="comment-title">Leave a Comment</h5>
+              <div class="row">
+                <div class="col-lg-6 mb-3">
+                  <label for="comment-name">Name</label>
+                  <input type="text" class="form-control" id="comment-name" placeholder="Enter your name">
+                </div>
+                <div class="col-lg-6 mb-3">
+                  <label for="comment-email">Email</label>
+                  <input type="text" class="form-control" id="comment-email" placeholder="Enter your email">
+                </div>
+                <div class="col-12 mb-3">
+                  <label for="comment-message">Message</label>
+
+                  <textarea class="form-control" id="comment-message" placeholder="Enter your name" cols="30" rows="10"></textarea>
+                </div>
+                <div class="col-12">
+                  <input type="submit" class="btn btn-primary" value="Post comment">
+                </div>
+              </div>
+            </div>
+          </div><!-- End Comments Form -->
+    </section>
+
+    <script type="module" src="/src/scripts/singlePage.ts"></script>
+</body>
+
+</html>
