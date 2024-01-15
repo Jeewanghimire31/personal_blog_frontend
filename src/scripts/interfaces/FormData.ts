@@ -6,6 +6,7 @@ export interface FormData {
 }
 
 export interface BlogForm {
+  blog_id?:string,
   title?:string,
   description?:string,
   subtitle?:string,
