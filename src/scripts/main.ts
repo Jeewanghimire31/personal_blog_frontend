@@ -26,11 +26,7 @@ const routes: Record<string, Route> = {
     redirect: "../pages/login.html",
   },
   "adminDashboard.html": {
-    authorize: () => isAdminAuthenticated(),
-    redirect: "../pages/login.html",
-  },
-  "navbar.html": {
-    authorize: () => isAdminAuthenticated(),
+    authorize: () => isAdminAuthenticated() && getUserRole() === "admin",
     redirect: "../pages/login.html",
   },
 };
@@ -48,10 +44,15 @@ export function navigateTo(path: string) {
 function handleAuthorization() {
   const currentPage = window.location.pathname.split("/").pop();
   const currentRoute = currentPage ? routes[currentPage] : undefined;
-
+console.log(currentRoute?.authorize());
+console.log(isAdminAuthenticated());
+console.log(currentRoute);
   if (currentRoute && !currentRoute.authorize()) {
+
     window.location.href = currentRoute.redirect || "../pages/login.html";
   }
 }
 
 handleAuthorization();
+
+console.log("hello from main.ts")

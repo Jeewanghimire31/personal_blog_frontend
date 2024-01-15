@@ -11,9 +11,9 @@ const cancelBlogButton = document.getElementById("cancel-blog")!;
 
 // * open hidden dialog box
 addBlogDialogButton?.addEventListener("click", () => {
-    if (!addDialogForm) return;
-    addDialogForm.style.display = "block";
-  // addDialogForm.style.display === "block" ? "none" : "block";
+  if (!addDialogForm) return;
+  addDialogForm.style.display = "block";
+  addDialogForm.style.display === "block" ? "none" : "block";
   console.log("hello");
 });
 

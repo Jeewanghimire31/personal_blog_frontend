@@ -43,8 +43,26 @@
       </section>
     </main>
 
+    <section>
+                <!-- * navbar import -->
+                <div id="importedBlog"></div>
+                <script>
+                  async function fetchAndInsertContent() {
+                    try {
+                      const response = await fetch('/src/pages/blogPreview.html');
+                      const html = await response.text();
+                      document.getElementById('importedBlog').innerHTML = html;
+                    } catch (error) {
+                      console.error('Error fetching or inserting content:', error);
+                    }
+                  }
+                  fetchAndInsertContent();
+                </script>
+    </section>
+
   </div>
   <script type="module" src="../scripts/main.ts"></script>
+  <script type="module" src="../scripts/BlogPreview.ts"></script>
 </body>
 
 </html>

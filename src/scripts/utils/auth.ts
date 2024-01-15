@@ -34,3 +34,13 @@ export function authorizeLoggedInUserPage() {
   }
   return true; // Indicate successful authorization
 }
+
+export function getMetaDataFromToken(): object | null {
+  const token = localStorage.getItem("accessToken");
+  if (!token) return null;
+  const [_, payload, __] = token.split(".");
+  const decodedPayload = atob(payload);
+  const jsonPayload = JSON.parse(decodedPayload);
+  console.log(jsonPayload);
+  return jsonPayload;
+}
