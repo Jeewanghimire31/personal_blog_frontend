@@ -1,3 +1,4 @@
+<!-- navbar.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,8 +16,9 @@
     </div>
     <nav class="main_nav">
       <ul>
-        <li><a href="#" class="inactive_link"> Blogs </a></li>
-        <li><a href="#" class="inactive_link"> Contact us</a></li>
+        <li><a href="#" class="inactive_link">Blogs</a></li>
+        <li><a href="#" class="inactive_link">Contact us</a></li>
+        <li id="auth-option"></li> <!-- Placeholder for authentication option -->
       </ul>
     </nav>
     <div class="ham_burger">
@@ -24,7 +26,10 @@
       <div></div>
       <div></div>
     </div>
+    <script type="module" src="../scripts/navbar.ts"></script>
     <script type="module" src="../scripts/main.ts"></script>
+    <script type="module" src="../scripts/utils/auth.ts"></script>
+
   </header>
 </body>
 
