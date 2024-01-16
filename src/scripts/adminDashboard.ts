@@ -50,4 +50,5 @@ function handleNavigation(event: Event) {
 
 function logout() {
   alert("Logout logic goes here");
+  localStorage.clear();
 }

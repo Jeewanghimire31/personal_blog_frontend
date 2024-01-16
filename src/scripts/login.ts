@@ -1,5 +1,6 @@
 import { FormData } from "./interfaces/FormData";
 import Toast from "./utils/Toastify";
+import { getMetaDataFromToken, isAdminAuthenticated, isUserAuthenticated } from "./utils/auth";
 import Axios from "./utils/axios";
 import {
   clearErrorMessages,
@@ -30,6 +31,7 @@ const login = async (formData: FormData) => {
       localStorage.setItem("accessToken", response.data.accessToken);
       localStorage.setItem("refreshToken", response.data.refreshToken);
       localStorage.setItem("role", response.data.role);
+      // console.log(getMetaDataFromToken)
 
       Toast(response.data.message);
       const formElement = document.getElementById(
@@ -38,9 +40,13 @@ const login = async (formData: FormData) => {
       formElement.reset();
 
       // send to login page after signup
-      // setTimeout(() => {
-      //   window.location.href = "../pages/homepage.html";
-      // }, 3000);
+      setTimeout(() => {
+        if (isUserAuthenticated()) {
+          window.location.href = "../pages/homepage.html";
+        } else if (isAdminAuthenticated()) {
+          window.location.href = "../pages/adminDashboard.html";
+        }
+      }, 3000);
     }
   } catch (error: any) {
     if (error.name === "ValidationError") {

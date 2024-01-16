@@ -1,5 +1,5 @@
 import { FormData } from "./interfaces/FormData";
-// import { navigateTo } from "./main";
+import { navigateTo } from "./main";
 import Toast from "./utils/Toastify";
 import Axios from "./utils/axios";
 import { clearErrorMessages, displayErrorMessage } from "./utils/displayValidationError";
@@ -26,9 +26,9 @@ const signup = async (formData: FormData) => {
       formElement.reset();
 
       // send to login page after signup
-      // setTimeout(() => {
-      //   navigateTo('../pages/login.html');
-      // }, 3000);
+      setTimeout(() => {
+        navigateTo('../pages/login.html');
+      }, 3000);
     }
   } catch (error: any) {
     // console.log(error.errors); //error message it gives
